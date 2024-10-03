@@ -163,13 +163,17 @@ class RockLangInterpreter {
     }
   }
 
-  // Function to handle scream
+  amplify(...args) {
+    return args.join("");
+  }
+
+  // Update scream method to use amplify
   scream(message) {
     this.output += message.toUpperCase().replace(/['"]+/g, "") + "\n";
     this.print(); // Display updated output
   }
 
-  // Function to handle whisper
+  // Update whisper method to use amplify
   whisper(message) {
     this.output += message.toLowerCase().replace(/['"]+/g, "") + "\n";
     this.print(); // Display updated output
