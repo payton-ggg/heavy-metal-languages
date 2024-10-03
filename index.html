@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RockLang Interpreter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      textarea {
+        width: 100%;
+        height: 150px;
+      }
+      pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-family: monospace;
+      }
+      button {
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>RockLang Interpreter</h1>
+    <textarea
+      id="code"
+      placeholder="Write your RockLang code here..."
+    ></textarea>
+    <button onclick="runRockLang()">Run RockLang</button>
+
+    <h2>Output</h2>
+    <pre id="output"></pre>
+
+    <script src="interpreter.js"></script>
+  </body>
+</html>
