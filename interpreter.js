@@ -28,17 +28,18 @@ class RockLangInterpreter {
 
   // Function to handle riff (variable declaration)
   // Function to handle riff (variable declaration)
+  // Function to handle riff (variable declaration) and setlist (array declaration)
   handleVariable(line) {
-    // Check if it's an array
-    const arrayMatch = /riff (\w+) = \[(.*)\];/.exec(line);
+    // Check if it's an array declared with 'setlist'
+    const arrayMatch = /(?:riff|setlist) (\w+) = \[(.*)\];/.exec(line);
     if (arrayMatch) {
       const [_, name, values] = arrayMatch;
-      // Split the array elements by comma and store it as an array
+      // Split the array elements by commas and store it as an array
       this.variables[name] = values
         .split(",")
         .map((v) => v.trim().replace(/['"]+/g, ""));
     } else {
-      // Handle normal variables (non-array)
+      // Handle normal variables (non-array) with 'riff'
       const match = /riff (\w+) = (.*);/.exec(line);
       if (match) {
         const [_, name, value] = match;
